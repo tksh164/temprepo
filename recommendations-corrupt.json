@@ -18,6 +18,5 @@
     "recommendationResourceType": "Microsoft.AAD/domainServices",
     "recommendationImpact": "High",
     "automationAvailable": true,
-    "query": "// Azure Resource Graph Query\n// Gets Entry Domain Services that are using the Standard SKU\nresources where type == \"microsoft.aad/domainservices\"\n| extend sku = properties.sku\n| where sku =~ 'Standard'\n| project recommendationId='bb6deb9d-24fa-4ee8-bc23-ac3ebc7fdf8e', name=name, id=id, tags=tags, param1=strcat('SKU:', sku)\n"
   }
 ]
